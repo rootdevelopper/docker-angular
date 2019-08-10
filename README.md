@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Docker Commands:
+
+    Build project on dev:
+        From root directory:
+            docker build -f Dockerfile.dev .
+    
+    On dev you can make changes to code and see your changes almost immediately.
+        when running docker compose...
+            volumes get mounted to keep node_files in container and sync the rest of the files
+
+    Build project on prod:
+        From root directory:
+            docker build -f Dockerfile.prd .
+    
+    On prod Dockerfile execute a multi-step build, (build in node and served from nginx) server.
+        when running docker compose...
+            There is no volume mounting.

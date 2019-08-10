@@ -1,0 +1,10 @@
+FROM node:alpine as buildWeb
+WORKDIR /usr/app
+COPY package.json .
+RUN npm i
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+
+COPY --from=buildWeb /usr/app/dist/A8Guide /usr/share/nginx/html
