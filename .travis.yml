@@ -1,6 +1,8 @@
 sudo: required
-services:
-  - docker
+
+language: node_js
+node_js:
+  - "8.10.0"
 
 addons:
   apt:
@@ -8,6 +10,10 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
+      - google-chrome-beta
+
+services:
+  - docker
 
 before_install:
   - export CHROME_BIN=chromium-browser
