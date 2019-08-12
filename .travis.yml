@@ -25,5 +25,5 @@ before_script:
   - npm install
 
 script:
-  - docker run -e rootdevelopper/docker-angular npm run test-headless
+  - docker run rootdevelopper/docker-angular npm run test-headless
 
